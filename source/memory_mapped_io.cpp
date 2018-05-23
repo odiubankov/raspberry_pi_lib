@@ -76,17 +76,17 @@ MemoryMappedIO::MemoryMappedIO()
 
 void MemoryMappedIO::setOutput(const GpioPin& pin) const
 {
-    resetPinBitsToZero(pin.getNumber());
+    resetPinBitsToZero(pin);
 
-    volatile auto pinRegisterAddress = getPinRegisterAddress(pin.getNumber());
-    auto pinBitsMask = getPinBitsMask(PinOutputBitsMask, pin.getNumber());
+    volatile auto pinRegisterAddress = getPinRegisterAddress(pin);
+    auto pinBitsMask = getPinBitsMask(PinOutputBitsMask, pin);
     *pinRegisterAddress |= pinBitsMask;
 }
 
 
 void MemoryMappedIO::setInput(const GpioPin& pin) const
 {
-    resetPinBitsToZero(pin.getNumber());
+    resetPinBitsToZero(pin);
 }
 
 

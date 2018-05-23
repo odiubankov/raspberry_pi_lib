@@ -10,10 +10,6 @@ namespace raspby {
 
 GpioPin::GpioPin(unsigned number)
     : number_{number}
-{
-    //TODO investigate static assert possibility
-    if(number < 2 || number > 27)
-        throw std::runtime_error("Gpio number is incorrect");
-}
+{}
 
 }
